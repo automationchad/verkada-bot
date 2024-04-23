@@ -1,9 +1,9 @@
 {
 	"display_information": {
-		"name": "Tracy",
+		"name": "Verkada Bot",
 		"description": "Search for answers to your question",
 		"background_color": "#112d4d",
-		"long_description": "Tracy is your one stop tool to get ALL your questions answered. Use the command `/tracy` to search up anything from your company's documentation. Can't find anything? Ask the right channel and then put your answer into Tracy for others to benefit."
+		"long_description": "Verkata Bot is your one stop tool to get ALL your questions answered. Use the command `/verkadabot` to search up anything from your company's documentation. Can't find anything? Ask the right channel and then put your answer into Tracy for others to benefit."
 	},
 	"features": {
 		"app_home": {
@@ -12,7 +12,7 @@
 			"messages_tab_read_only_enabled": false
 		},
 		"bot_user": {
-			"display_name": "Tracy",
+			"display_name": "Verkadabot",
 			"always_online": true
 		},
 		"shortcuts": [
@@ -28,12 +28,11 @@
 				"callback_id": "answer_item_message",
 				"description": "Answers a question based of message text"
 			}
-
 		]
 	},
 	"oauth_config": {
 		"redirect_urls": [
-			"https://api.motis.group/slack/oauth_redirect"
+			"https://verkada-bot-15229bb26621.herokuapp.com/slack/oauth_redirect"
 		],
 		"scopes": {
 			"user": ["channels:read", "users:read"],
@@ -51,13 +50,13 @@
 	},
 	"settings": {
 		"event_subscriptions": {
-			"request_url": "https://api.motis.group/slack/events",
+			"request_url": "https://verkada-bot-15229bb26621.herokuapp.com/slack/events",
 			"user_events": ["channel_created", "message.app_home"],
 			"bot_events": ["app_home_opened", "app_mention", "message.im"]
 		},
 		"interactivity": {
 			"is_enabled": true,
-			"request_url": "https://api.motis.group/slack/events"
+			"request_url": "https://verkada-bot-15229bb26621.herokuapp.com/slack/events"
 		},
 		"org_deploy_enabled": true,
 		"socket_mode_enabled": false,
