@@ -1,6 +1,6 @@
 # RAG Application for Verkada Sales Team
 
-![here](./verkada-bot.mp4).
+![here](https://www.youtube.com/watch?v=ewf_v-6whJg).
 
 The RAG (Retrieval-Augmented Generation) application is a powerful Slack chatbot designed specifically for the Verkada sales team. Leveraging the latest in AI and machine learning, it's trained extensively on public Verkada documentation. This innovative tool enables sales representatives to quickly and efficiently query product documentation, ensuring they have all the necessary information at their fingertips during customer interactions.
 
