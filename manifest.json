@@ -1,0 +1,66 @@
+{
+	"display_information": {
+		"name": "Tracy",
+		"description": "Search for answers to your question",
+		"background_color": "#112d4d",
+		"long_description": "Tracy is your one stop tool to get ALL your questions answered. Use the command `/tracy` to search up anything from your company's documentation. Can't find anything? Ask the right channel and then put your answer into Tracy for others to benefit."
+	},
+	"features": {
+		"app_home": {
+			"home_tab_enabled": false,
+			"messages_tab_enabled": true,
+			"messages_tab_read_only_enabled": false
+		},
+		"bot_user": {
+			"display_name": "Tracy",
+			"always_online": true
+		},
+		"shortcuts": [
+			{
+				"name": "Create item",
+				"type": "message",
+				"callback_id": "create_item_message",
+				"description": "Creates a question based of message text"
+			},
+			{
+				"name": "Answer item",
+				"type": "message",
+				"callback_id": "answer_item_message",
+				"description": "Answers a question based of message text"
+			}
+
+		]
+	},
+	"oauth_config": {
+		"redirect_urls": [
+			"https://api.motis.group/slack/oauth_redirect"
+		],
+		"scopes": {
+			"user": ["channels:read", "users:read"],
+			"bot": [
+				"app_mentions:read",
+				"channels:history",
+				"channels:read",
+				"chat:write",
+				"chat:write.public",
+				"commands",
+				"im:history",
+				"im:write"
+			]
+		}
+	},
+	"settings": {
+		"event_subscriptions": {
+			"request_url": "https://api.motis.group/slack/events",
+			"user_events": ["channel_created", "message.app_home"],
+			"bot_events": ["app_home_opened", "app_mention", "message.im"]
+		},
+		"interactivity": {
+			"is_enabled": true,
+			"request_url": "https://api.motis.group/slack/events"
+		},
+		"org_deploy_enabled": true,
+		"socket_mode_enabled": false,
+		"token_rotation_enabled": false
+	}
+}
