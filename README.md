@@ -1,80 +1,24 @@
-# Bolt for JavaScript Template App
+# RAG Application for Verkada Sales Team
 
-This is a generic Bolt for JavaScript template app used to build out Slack apps.
+![](./verkata-bot.mp4)
 
-Before getting started, make sure you have a development workspace where you have permissions to install apps. If you don’t have one setup, go ahead and [create one](https://slack.com/create).
-## Installation
+The RAG (Retrieval-Augmented Generation) application is a powerful Slack chatbot designed specifically for the Verkada sales team. Leveraging the latest in AI and machine learning, it's trained extensively on public Verkada documentation. This innovative tool enables sales representatives to quickly and efficiently query product documentation, ensuring they have all the necessary information at their fingertips during customer interactions.
 
-#### Create a Slack App
-1. Open [https://api.slack.com/apps/new](https://api.slack.com/apps/new) and choose "From an app manifest"
-2. Choose the workspace you want to install the application to
-3. Copy the contents of [manifest.json](./manifest.json) into the text box that says `*Paste your manifest code here*` (within the JSON tab) and click *Next*
-4. Review the configuration and click *Create*
-5. Click *Install to Workspace* and *Allow* on the screen that follows. You'll then be redirected to the App Configuration dashboard.
+## How It Works
 
-#### Environment Variables
-Before you can run the app, you'll need to store some environment variables.
+At the heart of the RAG application is a sophisticated AI model that utilizes dual components: retrieval and generation. The retrieval component is powered by dense vector embeddings, which are essentially high-dimensional representations of the text data. These embeddings allow the model to sift through vast amounts of Verkada documentation to find the most relevant information based on the query.
 
-1. Rename `.env.sample` to `.env`
-2. Open your apps configuration page from [this list](https://api.slack.com/apps), click *OAuth & Permissions* in the left hand menu, then copy the *Bot User OAuth Token* into your `.env` file under `SLACK_BOT_TOKEN`
-3. Click *Basic Information* from the left hand menu and follow the steps in the *App-Level Tokens* section to create an app-level token with the `connections:write` scope. Copy that token into your `.env` as `SLACK_APP_TOKEN`.
+Once the relevant documentation is retrieved, the generation component of the model kicks in. It uses the context provided by the retrieved documents to generate concise, accurate, and contextually relevant responses. This two-step process ensures that the information provided is not only relevant but also tailored to the specific query, making it incredibly efficient for sales reps.
 
-### Setup Your Local Project
-```zsh
-# Clone this project onto your machine
-git clone https://github.com/slack-samples/bolt-js-starter-template.git
+## Benefits for the Sales Team
 
-# Change into this project directory
-cd bolt-js-starter-template
+The RAG application delivers several key benefits to the Verkada sales team:
 
-# Install dependencies
-npm install
+- **Speed:** Sales reps can access detailed product information instantly, reducing the time spent searching through documentation.
+- **Accuracy:** By leveraging the latest in AI, the RAG application ensures that the information provided is accurate and up-to-date, increasing the reliability of the responses.
+- **Efficiency:** With faster access to information, sales reps can handle customer queries more effectively, leading to improved customer satisfaction and potentially higher sales conversions.
+- **Knowledge Sharing:** The application acts as a centralized knowledge repository, ensuring that all sales reps have equal access to information, thus leveling the playing field.
 
-# Run Bolt server
-npm start
-```
+## Conclusion
 
-#### Linting
-```zsh
-# Run eslint for code formatting and linting
-npm run lint
-```
-
-## Project Structure
-
-### `manifest.json`
-
-`manifest.json` is a configuration for Slack apps. With a manifest, you can create an app with a pre-defined configuration, or adjust the configuration of an existing app.
-
-### `app.js`
-
-`app.js` is the entry point for the application and is the file you'll run to start the server. This project aims to keep this file as thin as possible, primarily using it as a way to route inbound requests.
-
-### `/listeners`
-
-Every incoming request is routed to a "listener". Inside this directory, we group each listener based on the Slack Platform feature used, so `/listeners/shortcuts` handles incoming [Shortcuts](https://api.slack.com/interactivity/shortcuts) requests, `/listeners/views` handles [View submissions](https://api.slack.com/reference/interaction-payloads/views#view_submission) and so on.
-
-
-## App Distribution / OAuth
-
-Only implement OAuth if you plan to distribute your application across multiple workspaces. A separate `app-oauth.js` file can be found with relevant OAuth settings.
-
-When using OAuth, Slack requires a public URL where it can send requests. In this template app, we've used [`ngrok`](https://ngrok.com/download). Checkout [this guide](https://ngrok.com/docs#getting-started-expose) for setting it up.
-
-Start `ngrok` to access the app on an external network and create a redirect URL for OAuth. 
-
-```
-ngrok http 3000
-```
-
-This output should include a forwarding address for `http` and `https` (we'll use `https`). It should look something like the following:
-
-```
-Forwarding   https://3cb89939.ngrok.io -> http://localhost:3000
-```
-
-Navigate to **OAuth & Permissions** in your app configuration and click **Add a Redirect URL**. The redirect URL should be set to your `ngrok` forwarding address with the `slack/oauth_redirect` path appended. For example:
-
-```
-https://3cb89939.ngrok.io/slack/oauth_redirect
-```
+The RAG application represents a significant leap forward in how the Verkada sales team accesses and utilizes product documentation. By integrating advanced AI technologies, the application not only enhances the efficiency and effectiveness of the sales process but also ensures that the sales team can provide the best possible service to their customers.
