@@ -71,7 +71,7 @@ const initResources = async () => {
 					client: supabase,
 					similarityK: 2,
 					keywordK: 2,
-					tableName: 'embeddings',
+					tableName: 'documents',
 					similarityQueryName: 'match_documents',
 					keywordQueryName: 'kw_match_documents',
 			  });
